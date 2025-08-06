@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Scouting NFL</title>
+</head>
+<body>
+    <h1>NFL Draft Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="position">Position:</label>
+        <select name="position" required>
+            <option value="QB">QB</option>
+            <option value="RB">RB</option>
+            <option value="WR">WR</option>
+            <option value="TE">TE</option>
+            <option value="OL">OL</option>
+            <option value="DL">DL</option>
+            <option value="LB">LB</option>
+            <option value="CB">CB</option>
+            <option value="S">S</option>
+        </select><br><br>
+
+        <label>Height (inches):</label><input type="number" name="height" step="any" required><br>
+        <label>Weight (lbs):</label><input type="number" name="weight" step="any" required><br>
+        <label>40 Yard Dash:</label><input type="number" name="forty" step="any" required><br>
+        <label>Bench Press:</label><input type="number" name="bench" step="any" required><br>
+        <label>Vertical Jump:</label><input type="number" name="vertical" step="any" required><br>
+        <label>Broad Jump:</label><input type="number" name="broad" step="any" required><br>
+        <label>Shuttle:</label><input type="number" name="shuttle" step="any" required><br>
+        <label>3-Cone Drill:</label><input type="number" name="cone" step="any" required><br><br>
+
+        <label>Passing Yards:</label><input type="number" name="passing_yards" step="any" required><br>
+        <label>Passing TDs:</label><input type="number" name="passing_tds" step="any" required><br>
+        <label>Rushing Yards:</label><input type="number" name="rushing_yards" step="any" required><br>
+        <label>Rushing TDs:</label><input type="number" name="rushing_tds" step="any" required><br>
+        <label>Receiving Yards:</label><input type="number" name="receiving_yards" step="any" required><br>
+        <label>Receiving TDs:</label><input type="number" name="receiving_tds" step="any" required><br>
+        <label>Tackles:</label><input type="number" name="tackles" step="any" required><br>
+        <label>Sacks:</label><input type="number" name="sacks" step="any" required><br>
+        <label>Interceptions:</label><input type="number" name="interceptions" step="any" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <h3>Expected Draft Round: {{ round_result }}</h3>
+    {% endif %}
+</body>
+</html>
